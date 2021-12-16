@@ -116,26 +116,6 @@ onResize();
 
 // --- TICK
 
-const points = [];
-
-const clamp = (min, value, max) => Math.max(Math.min(max, value), min);
-
-const updatePoints = () => {
-  points.forEach((point) => {
-    const screenPosition = point.mesh.position.clone();
-    screenPosition.setFromMatrixPosition(point.mesh.matrixWorld);
-    screenPosition.project(views[0].camera);
-
-    // const translateX = clamp(0, screenPosition.x + 0.5, 1)
-    // const translateY = clamp(0, -screenPosition.y + 0.5, 1)
-
-    const translateX = clamp(-50, screenPosition.x * 100 * 0.5, 50);
-    const translateY = clamp(-50, -screenPosition.y * 100 * 0.5, 50);
-
-    point.node.style.setProperty("--x", translateX);
-    point.node.style.setProperty("--y", translateY);
-  });
-};
 
 const tick = () => {
   views.forEach((view) => {
@@ -147,7 +127,6 @@ const tick = () => {
     renderer.setScissorTest(true);
     renderer.render(view.scene, view.camera);
   });
-  updatePoints();
   window.requestAnimationFrame(() => tick());
 };
 
@@ -196,13 +175,13 @@ const desktopAnimation = () => {
 
   // section 2
   section++;
-  tl.to(models.rocket.position, { z: 2 }, section);
+  tl.to(models.rocket.position, { z: 3, y:-0.2, x:0.6  }, section);
   tl.to(models.tree.position, { x: -5, ease: "power4.in" }, section);
   // tl.to(views[1], { height: 1, ease: "none" }, section);
 
   // section 3
   section++;
-  tl.to(models.rocket.position, { z: -1, y: 4 }, section);
+  tl.to(models.rocket.position, { z: -2, y: 4 }, section);
   tl.to(models.tree.position, { x: -5, ease: "power4.in" }, section);
   // tl.to(views[1], { height: 1, ease: "none" }, section);
 
