@@ -176,7 +176,7 @@ const setupAnimation = () => {
 };
 
 const desktopAnimation = () => {
-  let section = 0;
+  let section = 1;
   const tl = gsap.timeline({
     default: {
       duration: 1,

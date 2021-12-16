@@ -3,6 +3,7 @@ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	font-family: monospace;
 }
 
 .canvas-container {
@@ -22,6 +23,37 @@ html, body {
 .section { 
 	width: 100vw;
 	height: 100vh;
-	outline: solid 1px #000;
+	/* outline: solid 1px #000; */
 	display: flex;
+}
+
+.section-0 { 
+	background-image: url("./falcon\ heavy.png");
+	background-size: cover;
+	background-position: center;
+	background-color: white;
+}
+
+.section h1 { 
+	font-size: 3em;
+	
+}
+
+.section-1 { 
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 50px;
+}
+
+.section-2 div, .section-3 div, .end div  { 
+	display: flex;
+	flex-direction: column;
+	margin-left: 400px;
+	align-items: flex-start;
+}
+
+.section-2 div span, .section-3 div span, .end div span   { 
+	font-size: 3.5em;
+	margin-bottom: 10px;
 }
