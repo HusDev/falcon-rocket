@@ -7,7 +7,7 @@ const COLORS = {
   background: "white",
   light: "#ffffff",
   sky: "#aaaaff",
-  ground: "#88ff88",
+  ground: "#e2e2e2",
   blue: "steelblue",
 };
 
@@ -187,7 +187,7 @@ const desktopAnimation = () => {
       start: "top top",
       end: "bottom bottom",
       scrub: 0.1,
-      markers: true,
+      // markers: true,
     },
   });
 
